@@ -146,13 +146,13 @@ get_score <- function(i, maxvar, var_set, sum_of_vals, sd, ssq, nrows, nfeatures
   factor <- maxvar/5
   #cat('checking', max(var_set), factor*nx_of_ten)
   score <- max(var_set) + 1.0*sum(var_set)/length(var_set) + factor*nx_of_ten
-  cat(i,'\t', nbr_crossings,'\t', nx_of_ten, '\t', round(1.0*sum_of_vals/nfeatures, 2),round(sd,2),'\t',round(max(var_set),1),'\t', round(1.0*sum(var_set)/length(var_set),1),'\t',round(score,2), '\t', 1 - my_sigmoid(score/100 - 5), '\n')
+  cat(i,'\t', nbr_crossings,'\t', round(max(var_set),1),'\t', round(1.0*sum(var_set)/length(var_set),1),'\t',round(score,2), '\t', 1 - my_sigmoid(score/100 - 5), '\n')
   return(score)
 }
 
 # collect the scores for each individual
 do_ordering <- function(nrows, ids, individuals, nreplicates) {
-  cat('Id      Xings Of_10 Mean SD \t Maxvar  Avervar   Base \t Score \n')
+  cat('Id      Xings \t Maxvar  Avervar   Base \t Score \n')
   score_data <- c()
   scores <- c()
   maxvars <- c()
@@ -211,5 +211,7 @@ profrep <- function(items, nrows) {
 
 #the way it prints is weird/never aligned
 #i wanna see if we can save it as a dataframe? and maybe have rank be a column instead a line at the bottom
+
+#also want to take out the "of_10" column in the output
 
 
