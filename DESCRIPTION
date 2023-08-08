@@ -38,3 +38,6 @@ Depends: R
 License: MIT
 URL: https://github.com/ubeattie/profrep
 BugReports: https://github.com/ubeattie/profrep/issues
+Encoding: UTF-8
+Roxygen: list(markdown=True)
+RoxygenNote: 7.2.1
