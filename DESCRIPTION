@@ -1,17 +1,40 @@
 Package: profrep
-Version: 0.0.1
-Date: 2023-07-21
 Title: Profile Repeatability
-Author: Ursula K. Beattie,
-  David R. Harris,
-  Zachary Weaver,
-  L. Michael Romero, 
-  J. Michael Reed
-Maintainer: Ursula K. Beattie <ursula.beattie@tufts.edu>
+Version: 0.0.1
+Authors@R: c(
+  person("Ursula", "Beattie",
+         "ubeattie@tufts.edu", 
+         role=c("cre", "aut", ),
+         comment = c(ORCID = "", )
+        ),
+  person("David", "Harris",
+         "harris_email",
+         role=c("aut", ), 
+         comment=c(ORCID="", )
+        ),
+  person("Michael", "Romero",
+         "romero_email",
+         role=c("aut", ),
+         comment=c(ORCID="", )
+        ),
+  person("Michael", "Reed",
+         "reed_email",
+         role=c("aut", ),
+         comment=c(ORCID="", )
+        ),
+  person("Zachary", "Weaver",
+         "zrweaver447@gmail.com",
+         role=c("aut", ),
+         comment=c(ORCID="0000-0001-6314-0690", )
+         ),
+  )
+Description: Calculates profile repeatability for replicate stress response 
+  curves, or similar time-series data. Profile repeatability is an individual 
+  repeatability metric that uses the variances at each timepoint, the maximum 
+  variance, the number of crossings (lines that cross over each other), and 
+  the number of replicates to compute the repeatability score. 
+  For more information see Reed et al., 2019, Gen. Comp. Endocrinol (270). 
 Depends: R
-Description: Calculates profile repeatability for replicate stress response curves, 
-  or similar time-series data. Profile repeatability is an individual repeatability metric 
-  that uses the variances at each timepoint, the maximum variance, the number of crossings 
-  (lines that cross over each other), and the number of replicates to compute the 
-  repeatability score. For more information see: Reed et al., 2019, Gen. Comp. Endocrinol (270).  
 License: MIT
+URL: https://github.com/ubeattie/profrep
+BugReports: https://github.com/ubeattie/profrep/issues
