@@ -2,31 +2,27 @@ Package: profrep
 Title: Profile Repeatability
 Version: 0.0.1
 Authors@R: c(
-  person("Ursula", "Beattie",
-         "ubeattie@tufts.edu", 
-         role=c("cre", "aut", ),
-         comment = c(ORCID = "", )
+  person(given="Ursula", family="Beattie",
+         email="ubeattie@tufts.edu", 
+         role=c("cre", "aut")
         ),
-  person("David", "Harris",
-         "harris_email",
-         role=c("aut", ), 
-         comment=c(ORCID="", )
+  person(given="David", family="Harris",
+         email="harris_email@gmail.com",
+         role=c("aut") 
         ),
-  person("Michael", "Romero",
-         "romero_email",
-         role=c("aut", ),
-         comment=c(ORCID="", )
+  person(given="Michael", family="Romero",
+         email="romero_email@tufts.edu",
+         role=c("aut")
         ),
-  person("Michael", "Reed",
-         "reed_email",
-         role=c("aut", ),
-         comment=c(ORCID="", )
+  person(given="Michael", family="Reed",
+         email="reed_email@tufts.edu",
+         role=c("aut")
         ),
-  person("Zachary", "Weaver",
-         "zrweaver447@gmail.com",
-         role=c("aut", ),
-         comment=c(ORCID="0000-0001-6314-0690", )
-         ),
+  person(given="Zachary", family="Weaver",
+         email="zrweaver447@gmail.com",
+         role=c("aut"),
+         comment=c(ORCID="0000-0001-6314-0690")
+         )
   )
 Description: Calculates profile repeatability for replicate stress response 
   curves, or similar time-series data. Profile repeatability is an individual 
@@ -35,7 +31,7 @@ Description: Calculates profile repeatability for replicate stress response
   the number of replicates to compute the repeatability score. 
   For more information see Reed et al., 2019, Gen. Comp. Endocrinol (270). 
 Depends: R
-License: MIT
+License: MIT + file LICENSE
 URL: https://github.com/ubeattie/profrep
 BugReports: https://github.com/ubeattie/profrep/issues
 Encoding: UTF-8
