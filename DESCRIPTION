@@ -2,23 +2,23 @@ Package: profrep
 Title: Profile Repeatability
 Version: 0.0.1
 Authors@R: c(
-  person(given="Ursula", family="Beattie",
+  person(given="Ursula", family="Beattie", middle="K.",
          email="ubeattie@tufts.edu", 
          role=c("cre", "aut")
         ),
-  person(given="David", family="Harris",
-         email="harris_email@gmail.com",
+  person(given="David", family="Harris", middle="",
+         email="drharris115@gmail.com",
          role=c("aut") 
         ),
-  person(given="Michael", family="Romero",
-         email="romero_email@tufts.edu",
+  person(given="L.", family="Romero", middle="Michael",
+         email="michael.romero@tufts.edu",
          role=c("aut")
         ),
-  person(given="Michael", family="Reed",
-         email="reed_email@tufts.edu",
+  person(given="J.", family="Reed", middle="Michael",
+         email="michael.reed@tufts.edu",
          role=c("aut")
         ),
-  person(given="Zachary", family="Weaver",
+  person(given="Zachary", family="Weaver", middle="R.",
          email="zrweaver447@gmail.com",
          role=c("aut"),
          comment=c(ORCID="0000-0001-6314-0690")
