@@ -17,3 +17,9 @@ To run test suite: `devtools::test()`
 To run a single file of tests: `testthat::test_file("tests/testthat/<test_file_name>.R")
 
 To update package documentation: `devtools::document()`
+
+## Actions
+
+This repo uses GitHub Actions to maintain the code base. There are actions to:
+
+- Run the `R CMD check` on the three major operating systems for the current and former R version
