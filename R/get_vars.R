@@ -42,7 +42,6 @@ get_vars <- function(individual_array, n_replicates) {
     # lens[j] <- number_measurements_at_j
     
     if (number_measurements_at_j > 1) { 
-      print(measurements_at_j)
       variance_list[j] <- stats::var(measurements_at_j)
     }
     else { variance_list[j] <- 0}
