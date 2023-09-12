@@ -1,26 +1,28 @@
-#' Perform profile repeatability
+#' Perform profile repeatability on a data-frame
 #' 
-#' `profrep()` performs the profile repeatability metric on the provided item
 #'
-#' @param items The data file
-#' @param n_rows The number of rows
+#' @param df The data file. Column 1 is the animal, column 2 is the time, the rest are the data
+#' @param n_rows The number of rows an individual animal will have.
 #' 
 #' @returns Does not return any object, but prints out the summary of the 
 #'  profile repeatability measure for the data. TODO: Change this to return
 #'  a dataframe.
-profrep <- function(items, n_rows) {
-  n_cols <- ncol(items)
+#'  
+#'  @export
+profrep <- function(df, n_trials) {
+  n_cols <- ncol(df)  # Number of columns in whole data frame
   
-  n_individuals = nrow(items) / n_rows
-  n_replicates <- n_cols - 2
+  n_individuals = nrow(df) / n_trials  # Number of individual animals
+  n_replicates <- n_cols - 2  # Number of replicates (because of how the df is defined)
   
-  names = items$Animal # This is why "Animal" must be the name of the first col 
-  ids <- unique(names)
+  ids <- unique(df$Animal) # the unique set of animal names
   
-  inividuals <- list()
-  for (j in ids) {
-    inividuals[[j]] <- subset(items, Animal == j)
+  # Now we get a list, where each element is a df of just that animal
+  individuals <- list()
+  for (i in 1:length(ids)) {
+    individuals[[i]] <- subset(df, Animal == ids[i])
   }
   
-  do_ordering(n_rows, ids, individuals, n_replicates)
+  # We now pass the list through the do_ordering function
+  do_ordering(n_trials=n_trials, id_list=ids, df_list=individuals, n_replicates=n_replicates)
 }

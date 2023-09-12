@@ -21,9 +21,8 @@
 #' @export
 get_vars <- function(individual_array, n_replicates) {
   n_rows_data <- nrow(individual_array)  # The number of rows in the individual array
-  variance_list <- numeric(n_rows_data)
-  # lens <- numeric(n_rows_data)
-  
+  variance_list <- numeric(length=n_rows_data)
+
   all_values <- c()
   
   for (j in 1:n_rows_data) {
