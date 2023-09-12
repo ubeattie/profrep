@@ -1,17 +1,44 @@
 Package: profrep
-Version: 0.0.1
-Date: 2023-07-21
 Title: Profile Repeatability
-Author: Ursula K. Beattie,
-  David R. Harris,
-  Zachary Weaver,
-  L. Michael Romero, 
-  J. Michael Reed
-Maintainer: Ursula K. Beattie <ursula.beattie@tufts.edu>
+Version: 0.0.1
+Authors@R: c(
+  person(given="Ursula", family="Beattie", middle="K.",
+         email="ubeattie@tufts.edu", 
+         role=c("cre", "aut")
+        ),
+  person(given="David", family="Harris", middle="",
+         email="drharris115@gmail.com",
+         role=c("aut") 
+        ),
+  person(given="L.", family="Romero", middle="Michael",
+         email="michael.romero@tufts.edu",
+         role=c("aut")
+        ),
+  person(given="J.", family="Reed", middle="Michael",
+         email="michael.reed@tufts.edu",
+         role=c("aut")
+        ),
+  person(given="Zachary", family="Weaver", middle="R.",
+         email="zrweaver447@gmail.com",
+         role=c("aut"),
+         comment=c(ORCID="0000-0001-6314-0690")
+         )
+  )
+Description: Calculates profile repeatability for replicate stress response 
+  curves, or similar time-series data. Profile repeatability is an individual 
+  repeatability metric that uses the variances at each timepoint, the maximum 
+  variance, the number of crossings (lines that cross over each other), and 
+  the number of replicates to compute the repeatability score. 
+  For more information see Reed et al., 2019, Gen. Comp. Endocrinol (270). 
 Depends: R
-Description: Calculates profile repeatability for replicate stress response curves, 
-  or similar time-series data. Profile repeatability is an individual repeatability metric 
-  that uses the variances at each timepoint, the maximum variance, the number of crossings 
-  (lines that cross over each other), and the number of replicates to compute the 
-  repeatability score. For more information see: Reed et al., 2019, Gen. Comp. Endocrinol (270).  
-License: MIT
+License: MIT + file LICENSE
+URL: https://github.com/ubeattie/profrep
+BugReports: https://github.com/ubeattie/profrep/issues
+Encoding: UTF-8
+Roxygen: list(markdown=TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    stats
