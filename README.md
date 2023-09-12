@@ -4,10 +4,31 @@
 [![pkgdown](https://github.com/ubeattie/profrep/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/ubeattie/profrep/actions/workflows/pkgdown.yaml)
 <!-- badges: end -->
   
-This code is for the profrep R package to calculate individual profile repeatability (Reed et al., 2019)
+This code is for the profrep R package to calculate individual profile repeatability (Reed et al., 2019) <!-- example: one-liner -->
 
-This edit made by Ursula
-This edit made by Zack
+
+Things to include in the readme:
+- one liner explaining the purpose of the package
+- short description of the goals of the package (1-2 paragraphs)
+- theory: a 2-4 paragraph description of the theory behind the code (purpose, math, etc)
+
+## Package Goals
+
+<!-- put the short description here -->
+
+## Theory
+
+<!-- put the theory here -->
+
+## Citations
+
+<!-- put any citations in the theory here -->
+
+<!-- don't worry about what is below this line -->
+
+## Demo
+
+## Further Informtion
 
 ## Development
 
