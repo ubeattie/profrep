@@ -26,7 +26,9 @@ Things to include in the readme:
 
 <!-- put any citations in the theory here -->
 Baugh AT, Oers K van, Dingemanse NJ, Hau M. Baseline and stress-induced glucocorticoid concentrations are not repeatable but covary within individual great tits (Parus major). Gen Comp Endocrinol [Internet]. 2014;208:154–63. Available from: http://dx.doi.org/10.1016/j.ygcen.2014.08.014
-1. Dingemanse NJ, Dochtermann NA. Quantifying individual variation in behaviour: Mixed-effect modelling approaches. J Anim Ecol. 2013;82:39–54. 
+
+Dingemanse NJ, Dochtermann NA. Quantifying individual variation in behaviour: Mixed-effect modelling approaches. J Anim Ecol. 2013;82:39–54. 
+
 Reed JM, Harris DR, Romero LM. Profile repeatability: A new method for evaluating repeatability of individual hormone response profiles. Gen Comp Endocrinol. 2019;270:1–9. 
 
 <!-- don't worry about what is below this line -->
