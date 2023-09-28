@@ -5,8 +5,8 @@
 #' @param n_trials The number of rows an individual animal will have.
 #' 
 #' @returns Does not return any object, but prints out the summary of the 
-#'  profile repeatability measure for the data. TODO: Change this to return
-#'  a dataframe.
+#' profile repeatability measure for the data. TODO: Change this to return
+#' a dataframe.
 #'  
 #' @export
 profrep <- function(df, n_trials) {

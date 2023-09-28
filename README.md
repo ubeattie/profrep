@@ -37,20 +37,51 @@ Profile Repeatability can be found in Reed et al. (2019).
 ## Installation
 
 You can install the development version of profrep from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/) using
+[devtools](https://devtools.r-lib.org) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("ubeattie/profrep")
 ```
 
+You can install the stable version of profrep from
+[CRAN](https://cran.r-project.org) with:
+
+``` r
+install.packages("profrep")
+```
+
+Alternatively, if one is using the [use_this](https://usethis.r-lib.org)
+package, profrep can be installed with:
+
+``` r
+usethis::use_package("profrep")
+```
+
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+The most common use pattern for profrep is to load in your data as a
+data frame to the active session, and pass it to the main `profrep`
+function. Below, we load in an example data set provided with the
+profrep package:
 
 ``` r
 library(profrep)
-## basic example code
+
+my_data <- profrep::synthetic_data_four_point
+n_trials <- 4  # or however many trials/rows of data per individual exist 
+profrep::profrep(df=my_data, n_trials=n_trials)
+#> Welcome to profrep!
+#> Number of columns in input dataframe: 6
+#> Number of individuals: 11
+#> Number of replicates: 4
+#> Separating dataframe into frames for individual animals.
+#> Scoring each set of data per animal.
+#> Ordering by score.
+#> Final Rank Order (by individual name)
+#> G F E I H D J C B K A 
+#> ____________
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?
@@ -69,13 +100,6 @@ summary(cars)
 
 You’ll still need to render `README.Rmd` regularly, to keep `README.md`
 up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
 
 ## Citations
 
