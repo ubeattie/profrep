@@ -8,7 +8,7 @@
 #'  profile repeatability measure for the data. TODO: Change this to return
 #'  a dataframe.
 #'  
-#'  @export
+#' @export
 profrep <- function(df, n_trials) {
   message("Welcome to profrep!")
   n_cols <- ncol(df)  # Number of columns in whole data frame
