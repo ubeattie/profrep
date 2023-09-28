@@ -2,20 +2,22 @@
 % Please edit documentation in R/profrep.R
 \name{profrep}
 \alias{profrep}
-\title{Perform profile repeatability}
+\title{Perform profile repeatability on a data-frame}
 \usage{
-profrep(items, n_rows)
+profrep(df, n_trials)
 }
 \arguments{
-\item{items}{The data file}
+\item{df}{The data frame Column 1 is the animal, column 2 is the time, the rest are the data}
 
-\item{n_rows}{The number of rows}
+\item{n_trials}{The number of rows an individual animal will have.}
 }
 \value{
 Does not return any object, but prints out the summary of the
 profile repeatability measure for the data. TODO: Change this to return
 a dataframe.
+
+@export
 }
 \description{
-\code{profrep()} performs the profile repeatability metric on the provided item
+Perform profile repeatability on a data-frame
 }

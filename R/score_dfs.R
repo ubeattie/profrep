@@ -1,5 +1,6 @@
-score_dfs <- function(id_list, df_list, n_replicates) {
+score_dfs <- function(id_list, df_list, n_replicates, n_trials) {
   max_variances_list <- c()
+  scores <- c()
   # Compute balancing factor (max_vars), then compute scores
   for (i in 1:length(id_list)) {
     individual_name <- id_list[[i]]
@@ -16,7 +17,11 @@ score_dfs <- function(id_list, df_list, n_replicates) {
     
     max_variances_list <- c(max_variances_list, max_variance)
     
-    # individual_score <- score_individual()
+    # individual_score <- score_individual_df(i, max_variance, variance_set, sum_of_values, sd, ssq, n_rows, num_measurements, n_replicates, df_list)
+    individual_score <- score_individual_df(individual_df, n_trials, n_replicates, max_variance = max_variance, variance_set = max_variances_list)
+    scores <- c(scores, individual_score)
   }
-  return(NA)
+  return(scores)
+  
+  # return(NA)
 }
