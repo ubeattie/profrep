@@ -114,3 +114,7 @@ up-to-date. `devtools::build_readme()` is handy for this.
 3.  Reed JM, Harris DR, Romero LM. Profile repeatability: A new method
     for evaluating repeatability of individual hormone response
     profiles. Gen Comp Endocrinol. 2019;270:1–9.
+
+## License
+
+[MIT License](https://opensource.org/license/mit/)
