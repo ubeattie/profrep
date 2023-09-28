@@ -15,8 +15,6 @@ profrep(df, n_trials)
 Does not return any object, but prints out the summary of the
 profile repeatability measure for the data. TODO: Change this to return
 a dataframe.
-
-@export
 }
 \description{
 Perform profile repeatability on a data-frame

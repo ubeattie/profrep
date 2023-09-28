@@ -1,0 +1,32 @@
+---
+title: "profrep"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{profrep}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Using profrep
+
+This vignette documents the most common use cases and patterns for the profrep package.
+
+## Introduction
+
+To use profrep, you will have to start with lab work! As described on the home page, one of the most common measurements that stress physiologists take is blood samples for corticosterone quantification during a stress response.
+
+## Basic Use: From a CSV
+
+First, we will install the package from CRAN:
+
+```{r setup}
+library(profrep)
+```
+
