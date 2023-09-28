@@ -2,7 +2,7 @@ Package: profrep
 Title: Profile Repeatability
 Version: 0.0.1
 Authors@R: c(
-  person("Ursula", "Beattie",
+  person("Ursula K.", "Beattie",
          email="ubeattie@tufts.edu", 
          role=c("cre", "aut")
         ),
@@ -18,7 +18,7 @@ Authors@R: c(
          email="michael.reed@tufts.edu",
          role=c("aut")
         ),
-  person("Zachary", "Weaver",
+  person("Zachary R.", "Weaver",
          email="zrweaver447@gmail.com",
          role=c("aut"),
          comment=c(ORCID="0000-0001-6314-0690")
