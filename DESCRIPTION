@@ -30,7 +30,8 @@ Description: Calculates profile repeatability for replicate stress response
   variance, the number of crossings (lines that cross over each other), and 
   the number of replicates to compute the repeatability score. 
   For more information see Reed et al., 2019, Gen. Comp. Endocrinol (270). 
-Depends: R
+Depends: 
+    R (>= 2.10)
 License: MIT + file LICENSE
 URL: https://github.com/ubeattie/profrep
 BugReports: https://github.com/ubeattie/profrep/issues
@@ -42,3 +43,4 @@ Suggests:
 Config/testthat/edition: 3
 Imports: 
     stats
+LazyData: true
