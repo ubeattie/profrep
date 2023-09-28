@@ -4,23 +4,23 @@ Version: 0.0.1.9000
 Authors@R: c(
   person("Ursula K.", "Beattie",
          email="ubeattie@tufts.edu", 
-         role=c("cre", "aut")
+         role=c("cre", "aut", "cph")
         ),
   person("David", "Harris",
          email="drharris115@gmail.com",
-         role=c("aut") 
+         role=c("aut", "cph") 
         ),
   person("L. Michael", "Romero",
          email="michael.romero@tufts.edu",
-         role=c("aut")
+         role=c("aut", "cph")
         ),
   person("J. Michael", "Reed",
          email="michael.reed@tufts.edu",
-         role=c("aut")
+         role=c("aut", "cph")
         ),
   person("Zachary R.", "Weaver",
          email="zrweaver447@gmail.com",
-         role=c("aut"),
+         role=c("aut", "cph"),
          comment=c(ORCID="0000-0001-6314-0690")
          )
   )
