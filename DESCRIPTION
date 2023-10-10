@@ -1,26 +1,26 @@
 Package: profrep
 Title: Profile Repeatability
-Version: 0.0.1
+Version: 0.0.1.9000
 Authors@R: c(
-  person(given="Ursula", family="Beattie", middle="K.",
+  person("Ursula K.", "Beattie",
          email="ubeattie@tufts.edu", 
-         role=c("cre", "aut")
+         role=c("cre", "aut", "cph")
         ),
-  person(given="David", family="Harris", middle="",
+  person("David", "Harris",
          email="drharris115@gmail.com",
-         role=c("aut") 
+         role=c("aut", "cph") 
         ),
-  person(given="L.", family="Romero", middle="Michael",
+  person("L. Michael", "Romero",
          email="michael.romero@tufts.edu",
-         role=c("aut")
+         role=c("aut", "cph")
         ),
-  person(given="J.", family="Reed", middle="Michael",
+  person("J. Michael", "Reed",
          email="michael.reed@tufts.edu",
-         role=c("aut")
+         role=c("aut", "cph")
         ),
-  person(given="Zachary", family="Weaver", middle="R.",
+  person("Zachary R.", "Weaver",
          email="zrweaver447@gmail.com",
-         role=c("aut"),
+         role=c("aut", "cph"),
          comment=c(ORCID="0000-0001-6314-0690")
          )
   )
@@ -30,7 +30,8 @@ Description: Calculates profile repeatability for replicate stress response
   variance, the number of crossings (lines that cross over each other), and 
   the number of replicates to compute the repeatability score. 
   For more information see Reed et al., 2019, Gen. Comp. Endocrinol (270). 
-Depends: R
+Depends: 
+    R (>= 2.10)
 License: MIT + file LICENSE
 URL: https://github.com/ubeattie/profrep
 BugReports: https://github.com/ubeattie/profrep/issues
@@ -38,7 +39,11 @@ Encoding: UTF-8
 Roxygen: list(markdown=TRUE)
 RoxygenNote: 7.2.3
 Suggests: 
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
     stats
+LazyData: true
+VignetteBuilder: knitr

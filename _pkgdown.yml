@@ -1,4 +1,44 @@
 url: ~
 template:
   bootstrap: 5
+  bootswatch: minty
+  theme: github-dark
+  opengraph:
+    twitter:
+      creator: "@ursulakbeattie"
+      site: "@TuftsUniversity"
+      card: summary
+  
+footer:
+  structure:
+    left: [package, developed_by]
+    right: built_with
+    
+home:
+  title: An R package for profile repeatability calculation
+  description: Calculate profile repeatability for your stress physiology experiments!
+  sidebar:
+    structure: [links, license, community, citation, authors, toc, dev]
 
+reference:
+- title: Main Function
+- contents:
+  - profrep
+- subtitle: Helper Functions
+- contents:
+  - calculate_crossovers
+  - clean_data
+  - do_ordering
+  - find_next_good_datapoint
+  - get_vars
+  - retrieve_good_data
+  - score_individual_df
+  - sigmoid
+- title: Example Datasets
+  desc: >
+    Datasets included with the profrep package to enable testing and as working
+    examples for new downloads.
+- contents:
+  - example_two_point_data
+  - sparrow_repeatability_three_point
+  - synthetic_data_four_point

@@ -1,25 +1,22 @@
-# test_that("find_next_good_datapoint returns correct values", {
-#   # Test case 1: 1 row, NA in middle of column
-#   data1 <- matrix(
-#     c(NA, 2, NA, 6, NA),
-#     nrow = 1,
-#     byrow=TRUE,
-#   )
-#   expect_equal(find_next_good_datapoint(data1, t = 1, i_rep = 1, n_replicates = 3), 2)
-#   expect_equal(find_next_good_datapoint(data1, t = 1, i_rep = 2, n_replicates = 3), 6)
-#   expect_equal(find_next_good_datapoint(data1, t = 1, i_rep = 3, n_replicates = 3), 6)
-#   
-  # # Test case 2: Multiple rows with NA values
-  # data2 <- matrix(
-  #   c(
-  #     NA, 2, 3, NA, 5,
-  #     6, NA, NA, 9, 10
-  #   ),
-  #   nrow = 2,
-  #   byrow=TRUE
-  # )
-  # expect_equal(find_next_good_datapoint(data2, t = 1, i_rep = 1, n_replicates = 3), 5)
-  # expect_equal(find_next_good_datapoint(data2, t = 2, i_rep = 1, n_replicates = 3), 9)
-  # expect_equal(find_next_good_datapoint(data2, t = 2, i_rep = 1, n_replicates = 4), 10)
-  
-# })
+test_that("clean_data cleans data correctly", {
+  # Test case 1: 
+  observed_data <- matrix(
+    c(
+      1, 60, 1, 2, 3, 4, 5,   # No NA values
+      1, 90, 9, NA, 4, NA, 2,  # NA Values in row
+      1, 120, 3, 6, NA, NA, 9  # Consecutive NA values
+    ),
+    nrow = 3,
+    byrow=TRUE
+  )
+  expected_data <- matrix(
+    c(
+      1, 60, 1, 2, 3, 4, 5,
+      1, 90, 9, 6.5, 4.0, 3, 2,
+      1, 120, 3, 6.0, 7.5, 8.25, 9
+    ),
+    nrow=3,
+    byrow=TRUE
+  )
+  expect_equal(clean_data(data=observed_data, n_trials=3, n_replicates=5), expected_data)
+})

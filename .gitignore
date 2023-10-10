@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 docs
+old_profrep
+.DS_Store
+inst/doc
