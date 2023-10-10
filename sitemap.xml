@@ -10,10 +10,34 @@
     <loc>/LICENSE.html</loc>
   </url>
   <url>
+    <loc>/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>/articles/profrep.html</loc>
+  </url>
+  <url>
     <loc>/authors.html</loc>
   </url>
   <url>
     <loc>/index.html</loc>
+  </url>
+  <url>
+    <loc>/news/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/calculate_crossovers.html</loc>
+  </url>
+  <url>
+    <loc>/reference/clean_data.html</loc>
+  </url>
+  <url>
+    <loc>/reference/do_ordering.html</loc>
+  </url>
+  <url>
+    <loc>/reference/example_two_point_data.html</loc>
+  </url>
+  <url>
+    <loc>/reference/find_next_good_datapoint.html</loc>
   </url>
   <url>
     <loc>/reference/get_vars.html</loc>
@@ -28,6 +52,15 @@
     <loc>/reference/retrieve_good_data.html</loc>
   </url>
   <url>
+    <loc>/reference/score_individual_df.html</loc>
+  </url>
+  <url>
     <loc>/reference/sigmoid.html</loc>
+  </url>
+  <url>
+    <loc>/reference/sparrow_repeatability_three_point.html</loc>
+  </url>
+  <url>
+    <loc>/reference/synthetic_data_four_point.html</loc>
   </url>
 </urlset>
