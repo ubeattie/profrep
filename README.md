@@ -8,7 +8,7 @@
 [![pkgdown](https://github.com/ubeattie/profrep/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/ubeattie/profrep/actions/workflows/pkgdown.yaml)
 <!-- badges: end -->
 
-The goal of profrep is to calculate individual profile repeatability
+The goal of profrep is to calculate individual profile repeatability of replicate stress response curves
 (Reed et al., 2019).
 
 One of the most common measurements that stress physiologists take is
