@@ -71,7 +71,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The goal of profrep is to calculate individual profile repeatability (Reed et al., 2019).</p>
+<p>The goal of profrep is to calculate individual profile repeatability of replicate stress response curves (Reed et al., 2019).</p>
 <p>One of the most common measurements that stress physiologists take is blood samples for corticosterone quantification during a stress response. This typically includes a sample at baseline (&lt;3 minutes of stressor onset), one or more stress-induced samples (e.g. 30 minutes after stressor onset), and potentially a negative feedback sample (e.g. 120 minutes after stressor onset and/or after dexamethasone injection). Such time series are called “stress response curves” and may be taken multiple times in one individual. If researchers have multiple stress response curves for an individual, they may want to quantify repeatability to investigate, for example, heritibility. The current standard in the field is to use linear mixed-effect models (Baugh et al. 2014; Dingemanse and Dochtermann, 2013), however this type of repeatability estimate can only be done on populations and on only one timepoint at a time. Reed et al. (2019) have proposed “Profile Repeatability,” which uses the full stress response curve (across time) to estimate repeatability for individuals.</p>
 <p>‘profrep’ is a R package for computing profile repeatability on any number of individuals, any number of timepoints, and any number of replicate stress resposne curves. A full explanation of the math behind Profile Repeatability can be found in Reed et al. (2019).</p>
 <div class="section level2">
