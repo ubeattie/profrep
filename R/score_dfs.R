@@ -1,3 +1,26 @@
+#' Compute the profile repeatability score for each groups of data
+#' 
+#' Splits the data into the data frame for a particular individual from 
+#' the id_list, then calculates metrics to compute the profile repeatability 
+#' score. Returns a data frame with the individuals name and the score.
+#' 
+#' @param id_list The list of the names of the individuals
+#' @param df_list A list of data frames, each of which correspond to one of the names in the individual list
+#' @param n_replicates The number of replicate columns (number of columns in a df in df_list)
+#' @param n_trials The number of trials per individual (number of rows in a df in df_list) 
+#'
+#' @return A dataframe of two columns, where the first column is the individual name and the second is the profile repeatability score for the individual's data frame
+#' 
+#' @examples
+#' id_list <- c('A', 'B', 'C')
+#' df_list <- c(
+#'   matrix(c(1, 60, 1, 2, 3, 4, 5, 1, 90, 9, NA, 4, NA, 2, 1, 120, 3, 6, NA, NA, 9), nrow = 3, byrow=TRUE),
+#'   matrix(c(1, 60, 5, 6, 7, 8, 9, 1, 90, 9, NA, 4, NA, 2, 1, 120, 3, 6, NA, NA, 9), nrow = 3, byrow=TRUE),
+#'   matrix(c(1, 60, 11, 12, 13, 14, 15, 1, 90, 9, NA, 4, NA, 2, 1, 120, 3, 6, NA, NA, 9), nrow = 3, byrow=TRUE)
+#'   )
+#' ret_df <- score_dfs(id_list, df_list, n_replicates=5, n_trials=3)
+#' 
+#' @export
 score_dfs <- function(id_list, df_list, n_replicates, n_trials) {
   max_variances_list <- c()
   scores <- c()
@@ -17,11 +40,9 @@ score_dfs <- function(id_list, df_list, n_replicates, n_trials) {
     
     max_variances_list <- c(max_variances_list, max_variance)
     
-    # individual_score <- score_individual_df(i, max_variance, variance_set, sum_of_values, sd, ssq, n_rows, num_measurements, n_replicates, df_list)
     individual_score <- score_individual_df(individual_df, n_trials, n_replicates, max_variance = max_variance, variance_set = max_variances_list)
     scores <- c(scores, individual_score)
   }
-  return(scores)
-  
-  # return(NA)
+  df <- data.frame(individual=id_list, score=scores)
+  return(df)
 }

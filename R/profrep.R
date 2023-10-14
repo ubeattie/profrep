@@ -4,9 +4,9 @@
 #' @param df The data frame Column 1 is the animal, column 2 is the time, the rest are the data
 #' @param n_trials The number of rows an individual animal will have.
 #' 
-#' @returns Does not return any object, but prints out the summary of the 
-#' profile repeatability measure for the data. TODO: Change this to return
-#' a dataframe.
+#' @returns Returns a dataframe of the individual, profile repeatability score, and rank.
+#' 
+#' @seealso \code{\link{do_ordering}} for the main data processing function.
 #'  
 #' @export
 profrep <- function(df, n_trials) {
@@ -30,5 +30,6 @@ profrep <- function(df, n_trials) {
   }
   
   # We now pass the list through the do_ordering function
-  do_ordering(n_trials=n_trials, id_list=ids, df_list=individuals, n_replicates=n_replicates)
+  ordered_df <- do_ordering(n_trials=n_trials, id_list=ids, df_list=individuals, n_replicates=n_replicates)
+  return(ordered_df)
 }

@@ -1,7 +1,8 @@
 #' Clean Data by Interpolating Missing Values
 #'
 #' This function cleans a dataset by interpolating missing values in the replicate
-#' columns of each row using neighboring values.
+#' columns of each row using neighboring values. If the data frame ends in null values
+#' (the last columns are nulls), it will truncate to not include those columns.
 #'
 #' @param data A data frame containing the dataset to be cleaned.
 #' @param n_trials The total number of rows in the dataset.
@@ -27,8 +28,16 @@
 #' @export
 clean_data <- function(data, n_trials, n_replicates) {
   missing_set <- c()
+  
+  # Have to truncate data if ending values are null - can't interpolate
+  mx_ind <- max(which(!is.na(data[1,])))
+  data <- data[, 1:mx_ind]
+  n_replicates <- mx_ind - 2
+  # Also have to reset n_replicates for this function
+
   for (t in 1:n_trials) { # loops through rows
     trial_row <- data[t, 3:ncol(data)] # get the row of replicate data only
+    
     for (i_rep in 1:n_replicates) { # loops through replicate columns
       # replicate columns are really index 3 to the end of the data frame
       if (is.na(trial_row[i_rep])) {
@@ -36,8 +45,12 @@ clean_data <- function(data, n_trials, n_replicates) {
         missing_set <- c(missing_set, t*(n_replicates -1) + i_rep) # add to missing set
         
         interp_val <- find_next_good_datapoint(trial_row, i_rep, n_replicates)
-
-        replacement_val <- trial_row[i_rep - 1] + (interp_val - trial_row[i_rep - 1]) / 2
+        
+        # If the first value is null, need to set it to 0 to interpolate
+        if (i_rep == 1) {first_val = 0}
+        else {first_val = trial_row[i_rep - 1]}
+        
+        replacement_val <- first_val + (interp_val - first_val) / 2
         trial_row[i_rep] <- replacement_val
       }
     }
