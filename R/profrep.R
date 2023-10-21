@@ -40,6 +40,7 @@
 #' @examples
 #' test_data <- profrep::example_two_point_data
 #' results <- profrep::profrep(df=test_data, n_trials=2)
+#' print(results)
 #' 
 #' @export
 profrep <- function(df, n_trials, verbose=FALSE) {

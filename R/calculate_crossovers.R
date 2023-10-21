@@ -1,5 +1,6 @@
-#' Calculate the Number of Crossovers in a Dataset
-#'
+#' @title Calculate the Number of Crossovers
+#' 
+#' @details
 #' This function calculates the number of crossovers in a dataset by comparing
 #' the values of replicates across multiple trials. It assumes that missing
 #' values (NAs) have been interpolated using the `clean_data` function.
@@ -13,7 +14,6 @@
 #' @seealso \code{\link{clean_data}} for information on data cleaning.
 #'
 #' @examples
-#' # Example usage:
 #' data <- matrix(
 #'    c(
 #'      1, 60, 1, 2, 3, 4, 5,   # No NA values
@@ -32,9 +32,7 @@
 calculate_crossovers <- function(individual_df, n_trials, n_replicates) {
   indicators <- c()
   clean_df <- clean_data(data=individual_df, n_trials=n_trials, n_replicates=n_replicates)
-  # Because clean_df could truncate the data, we have to recalculate the number of replicates
-  n_replicates = ncol(clean_df) - 2
-  
+
   for (t in 1:n_trials) {
     for (i in 1:(n_replicates - 1)) {
       val <- clean_df[t, i + 2]

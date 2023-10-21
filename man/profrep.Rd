@@ -48,6 +48,7 @@ the method in Reed et al. (2019).
 \examples{
 test_data <- profrep::example_two_point_data
 results <- profrep::profrep(df=test_data, n_trials=2)
+print(results)
 
 }
 \seealso{

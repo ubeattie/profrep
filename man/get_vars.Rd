@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_vars.R
 \name{get_vars}
 \alias{get_vars}
-\title{Calculates the variances of the groups}
+\title{Calculate Group Variance}
 \usage{
 get_vars(individual_array, n_replicates)
 }
@@ -21,13 +21,23 @@ A list, where the elements are:
 }\if{html}{\out{</div>}}
 }
 \description{
-For the given individual i, for a given time, computes the variance in values
-over replicates.
+Calculate Group Variance
 }
 \details{
+For the given individual array, for all rows of times, computes the variance in values
+over replicates.
+
 Returns these variances, sum of all values (for all times and replicates),
 sum of all these values squared, and the number of values.
+}
+\examples{
+arr <- data.frame(
+  individual=c("a", "a"),
+  time=c(5, 15),
+  col_a=c(1, 2),
+  col_b=c(2, 3)
+)
+variance_return <- get_vars(individual_array=arr, n_replicates=2)
+print(variance_return)
 
-Change: instead of passing in i, individuals -> let's do individual
-Then whatever calls this function should do individuals at i
 }

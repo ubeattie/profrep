@@ -1,13 +1,11 @@
-#' Calculates the variances of the groups
+#' @title Calculate Group Variance
 #' 
-#' For the given individual i, for a given time, computes the variance in values
+#' @details
+#' For the given individual array, for all rows of times, computes the variance in values
 #' over replicates.
 #' 
 #' Returns these variances, sum of all values (for all times and replicates),
 #' sum of all these values squared, and the number of values.
-#' 
-#' Change: instead of passing in i, individuals -> let's do individual
-#' Then whatever calls this function should do individuals at i
 #' 
 #' @param individual_array The array of data for an individual
 #' @param n_replicates The number of replicate groups
@@ -18,6 +16,17 @@
 #'          2. total_sum: The sum of all the measurements in the sample
 #'          3. ssq: The sum of all the squares of the measurements in the sample
 #'          4. num_measurements: The total number of measurements in the sample that are not null
+#'          
+#' @examples
+#' arr <- data.frame(
+#'   individual=c("a", "a"),
+#'   time=c(5, 15),
+#'   col_a=c(1, 2),
+#'   col_b=c(2, 3)
+#' )
+#' variance_return <- get_vars(individual_array=arr, n_replicates=2)
+#' print(variance_return)
+#' 
 #' @export
 get_vars <- function(individual_array, n_replicates) {
   n_rows_data <- nrow(individual_array)  # The number of rows in the individual array

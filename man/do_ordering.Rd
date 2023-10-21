@@ -43,3 +43,19 @@ Ranks are assigned with ties allowed - if N individuals have a tie, their rank
 is averaged. For example, if the max score is 1, and two individuals have
 that score, their rank is 1.5
 }
+\examples{
+df <- data.frame(
+    col_a = c('A', 'A', 'B', 'B'),
+    col_b = c(5, 15, 5, 15),
+    col_c = c(5, 10, 1, 2),
+    col_d = c(10, 15, 3, 4)
+  )
+id_list <- unique(df[, 1])
+individuals <- list()
+for (i in 1:length(id_list)) {
+  individuals[[i]] <- df[df[, 1] == id_list[i], ]
+}
+ret_df <- do_ordering(n_trials=2, id_list=id_list, df_list=individuals, n_replicates=2)
+print(ret_df)
+
+}

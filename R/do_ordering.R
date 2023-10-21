@@ -27,6 +27,21 @@
 #'          - Column 6: "final_score" - the base score, normalized by the sigmoid function. Constrained to be between 0 and 1. Scores closer to 1 rank higher.
 #'          - Column 7: "rank" - the calculated ranking of the individual or sample, against all other individuals or samples in the data set.
 #' 
+#' @examples
+#' df <- data.frame(
+#'     col_a = c('A', 'A', 'B', 'B'),
+#'     col_b = c(5, 15, 5, 15),
+#'     col_c = c(5, 10, 1, 2),
+#'     col_d = c(10, 15, 3, 4)
+#'   )
+#' id_list <- unique(df[, 1])
+#' individuals <- list()
+#' for (i in 1:length(id_list)) {
+#'   individuals[[i]] <- df[df[, 1] == id_list[i], ]
+#' }
+#' ret_df <- do_ordering(n_trials=2, id_list=id_list, df_list=individuals, n_replicates=2)
+#' print(ret_df)
+#' 
 #' @export
 do_ordering <- function(n_trials, id_list, df_list, n_replicates, verbose=FALSE) {
   # Generate Scores
@@ -35,7 +50,8 @@ do_ordering <- function(n_trials, id_list, df_list, n_replicates, verbose=FALSE)
     id_list=id_list, 
     df_list=df_list, 
     n_replicates=n_replicates, 
-    n_trials=n_trials
+    n_trials=n_trials,
+    verbose=verbose
   )
 
   # Order Scores and Individuals
@@ -45,6 +61,8 @@ do_ordering <- function(n_trials, id_list, df_list, n_replicates, verbose=FALSE)
   # need the minus to rank the highest score the highest
   # average will make ties be the same decimal value
   ordered_df$rank <- rank(-ordered_df$final_score, ties.method="average")
+  
+  # Resets the index
   rownames(ordered_df) <- NULL
   
   return(ordered_df)

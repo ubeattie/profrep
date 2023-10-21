@@ -1,7 +1,8 @@
-#' Find the next good data point in a list of data.
+#' @title What Is the Next Non-Null Data Point?
 #'
+#' @details
 #' Given a data row, an index, and the number of replicates (the number of elements in the row),
-#'  this function finds the next good data point in the row.
+#'this function finds the next good data point in the row.
 #'
 #' A good data point is a non-missing value (not NA) with a non-empty string.
 #'
