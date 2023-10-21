@@ -28,11 +28,11 @@ do_ordering <- function(n_trials, id_list, df_list, n_replicates) {
 
   # Order Scores and Individuals
   message("Ordering by score.")
-  ordered_df <- scores_df[order(scores_df$score, decreasing=TRUE), ]
+  ordered_df <- scores_df[order(scores_df$final_score, decreasing=TRUE), ]
   
   # need the minus to rank the highest score the highest
   # average will make ties be the same decimal value
-  ordered_df$rank <- rank(-ordered_df$score, ties.method="average")
+  ordered_df$rank <- rank(-ordered_df$final_score, ties.method="average")
   rownames(ordered_df) <- NULL
   
   return(ordered_df)

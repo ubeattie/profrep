@@ -26,31 +26,25 @@ get_vars <- function(individual_array, n_replicates) {
   all_values <- c()
   
   for (j in 1:n_rows_data) {
+    
     measurements_at_j <- c()
     
-    # Loop through data, calculate the values
-    for (k in 3:(2 + n_replicates)) {
-      measurement <- individual_array[j, k]
-      if (!is.na(measurement)) {
-        measurements_at_j <- c(measurements_at_j, measurement)
-        all_values <- c(all_values, measurement)
-      }
-    }
+    measurements_at_j <- unlist(individual_array[j, 3:ncol(individual_array)])
+    all_values <- c(all_values, measurements_at_j)
     
     number_measurements_at_j <- length(measurements_at_j)
-    # lens[j] <- number_measurements_at_j
     
     if (number_measurements_at_j > 1) { 
-      variance_list[j] <- stats::var(measurements_at_j)
+      variance_list[j] <- stats::var(measurements_at_j, na.rm=TRUE)
     }
     else { variance_list[j] <- 0}
   }
-  
+    
   return(
     list(
       variances=variance_list,
-      total_sum=sum(all_values),
-      ssq=sum(all_values**2),
+      total_sum=sum(all_values, na.rm=TRUE),
+      ssq=sum(all_values**2, na.rm=TRUE),
       num_measurements=length(all_values)
     )
   )

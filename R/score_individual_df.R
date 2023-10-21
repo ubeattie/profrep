@@ -29,6 +29,13 @@ score_individual_df <- function(individual_df, n_trials, n_replicates, max_varia
     nx_of_ten <- round(20.0 * n_crossings / ((n_trials - 1) * n_replicates * (n_replicates - 1)), 0)
   }
   scale_factor <- max_variance / 5
-  score <- max(variance_set) + 1.0 * sum(variance_set) / length(variance_set) + scale_factor * nx_of_ten
-  return(score)
+  base_score <- max(variance_set) + 1.0 * sum(variance_set) / length(variance_set) + scale_factor * nx_of_ten
+  # # cat("Xings\tMax(VarSet)\tAve(VarSet)\tBase\tScore\n")
+  # cat(n_crossings, '\t', round(max(variance_set), 1), '\t', round(1.0*sum(variance_set)/length(variance_set),1), '\t', round(score,2), '\t', 1 - sigmoid(score/100 - 5), '\n')
+  # 
+  ret_list <- list(
+    n_crossings=n_crossings,
+    base_score=base_score
+  )
+  return(ret_list)
 }

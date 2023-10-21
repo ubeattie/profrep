@@ -24,6 +24,8 @@
 score_dfs <- function(id_list, df_list, n_replicates, n_trials) {
   max_variances_list <- c()
   scores <- c()
+  crossings <- c()
+  ave_variances <- c()
   # Compute balancing factor (max_vars), then compute scores
   for (i in 1:length(id_list)) {
     individual_name <- id_list[[i]]
@@ -39,10 +41,19 @@ score_dfs <- function(id_list, df_list, n_replicates, n_trials) {
     max_variance <- max(variance_set)
     
     max_variances_list <- c(max_variances_list, max_variance)
-    
-    individual_score <- score_individual_df(individual_df, n_trials, n_replicates, max_variance = max_variance, variance_set = max_variances_list)
-    scores <- c(scores, individual_score)
+    ave_variances <- c(ave_variances, 1.0*sum(variance_set)/length(variance_set))
+    individual_score_list <- score_individual_df(individual_df, n_trials, n_replicates, max_variance = max_variance, variance_set = variance_set)
+    crossings <- c(crossings, individual_score_list$n_crossings)
+    scores <- c(scores, individual_score_list$base_score)
   }
-  df <- data.frame(individual=id_list, score=scores)
+  final_scores <- 1 - sigmoid(scores/100 - 5)
+  df <- data.frame(
+    individual=id_list, 
+    n_crossings=crossings, 
+    max_variance=round(max_variances_list,2),
+    ave_variance=round(ave_variances, 2),
+    base_score=round(scores, 2), 
+    final_score=round(final_scores, 4)
+  )
   return(df)
 }

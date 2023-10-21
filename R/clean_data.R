@@ -29,12 +29,6 @@
 clean_data <- function(data, n_trials, n_replicates) {
   missing_set <- c()
   
-  # Have to truncate data if ending values are null - can't interpolate
-  mx_ind <- max(which(!is.na(data[1,])))
-  data <- data[, 1:mx_ind]
-  n_replicates <- mx_ind - 2
-  # Also have to reset n_replicates for this function
-
   for (t in 1:n_trials) { # loops through rows
     trial_row <- data[t, 3:ncol(data)] # get the row of replicate data only
     
@@ -45,12 +39,11 @@ clean_data <- function(data, n_trials, n_replicates) {
         missing_set <- c(missing_set, t*(n_replicates -1) + i_rep) # add to missing set
         
         interp_val <- find_next_good_datapoint(trial_row, i_rep, n_replicates)
-        
-        # If the first value is null, need to set it to 0 to interpolate
-        if (i_rep == 1) {first_val = 0}
+        # If the first value is null, need to pull the last replicate value.
+        if (i_rep == 1) {first_val = trial_row[n_replicates]}
         else {first_val = trial_row[i_rep - 1]}
         
-        replacement_val <- first_val + (interp_val - first_val) / 2
+        replacement_val <- first_val + interp_val / 2 
         trial_row[i_rep] <- replacement_val
       }
     }

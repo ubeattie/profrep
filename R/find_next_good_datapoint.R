@@ -21,7 +21,7 @@
 find_next_good_datapoint <- function(data_row, index, n_replicates) {
   interp_val <- -999
   proceed <- TRUE
-  
+
   if ((index + 1) < n_replicates) {
     for (k in (index+1):n_replicates) {
       if (proceed) {
@@ -35,7 +35,7 @@ find_next_good_datapoint <- function(data_row, index, n_replicates) {
   }
   
   if (interp_val == -999) {
-    interp_val <- data_row[index + 1]
+    interp_val <- data_row[index - 1]
   }
   return(interp_val)
 }
