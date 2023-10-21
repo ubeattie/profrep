@@ -2,19 +2,44 @@
 % Please edit documentation in R/do_ordering.R
 \name{do_ordering}
 \alias{do_ordering}
-\title{Performs the ordering of input data by scoring each individual data frame.}
+\title{Score and Order Data}
 \usage{
-do_ordering(n_trials, id_list, df_list, n_replicates)
+do_ordering(n_trials, id_list, df_list, n_replicates, verbose = FALSE)
 }
 \arguments{
-\item{n_trials}{The number of trials per individual (number of rows per individual dataframe)}
+\item{n_trials}{The number of rows an individual sample will have.}
 
-\item{id_list}{The list of unique individual names}
+\item{id_list}{The list of unique individual or sample names}
 
-\item{df_list}{the list of dataframe per unique individual}
+\item{df_list}{The list of data frames per unique individual}
 
-\item{n_replicates}{The number of replicates for each individual}
+\item{n_replicates}{The number of replicates in the study.}
+
+\item{verbose}{A boolean parameter the defaults to FALSE. Determines whether messages are printed.}
+}
+\value{
+Returns a data frame of the results, in the following form:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{     - Column 1: "individual" - the unique identifier of an individual or sample
+     - Column 2: "n_crossings" - the calculated number of crossings.
+     - Column 3: "max_variance" - the maximum of the variances of the replicate measurements at a single time for the individual or sample.
+     - Column 4: "ave_variance" - the average of the variances of the replicate measurements at a single time for the individual or sample.
+     - Column 5: "base_score" - the original, unnormalized profile repeatability score. Smaller numbers rank higher.
+     - Column 6: "final_score" - the base score, normalized by the sigmoid function. Constrained to be between 0 and 1. Scores closer to 1 rank higher.
+     - Column 7: "rank" - the calculated ranking of the individual or sample, against all other individuals or samples in the data set.
+}\if{html}{\out{</div>}}
 }
 \description{
+Score and Order Data
+}
+\details{
 Performs the ordering of input data by scoring each individual data frame.
+
+The main function of the package, this will send each individuals data out
+for scoring. Then, when all scores are computed, it will order the result
+data frame by score and assign a rank.
+
+Ranks are assigned with ties allowed - if N individuals have a tie, their rank
+is averaged. For example, if the max score is 1, and two individuals have
+that score, their rank is 1.5
 }

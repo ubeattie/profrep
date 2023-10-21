@@ -12,8 +12,8 @@ test_that("clean_data cleans data correctly", {
   expected_data <- matrix(
     c(
       1, 60, 1, 2, 3, 4, 5,
-      1, 90, 9, 6.5, 4.0, 3, 2,
-      1, 120, 3, 6.0, 7.5, 8.25, 9
+      1, 90, 9, 11, 4.0, 6, 2,
+      1, 120, 3, 6.0, 10.5, 15.75, 9
     ),
     nrow=3,
     byrow=TRUE

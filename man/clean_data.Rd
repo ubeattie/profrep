@@ -18,7 +18,8 @@ A cleaned data frame with missing values interpolated.
 }
 \description{
 This function cleans a dataset by interpolating missing values in the replicate
-columns of each row using neighboring values.
+columns of each row using neighboring values. If the data frame ends in null values
+(the last columns are nulls), it will truncate to not include those columns.
 }
 \examples{
 # Example usage:
