@@ -71,7 +71,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The goal of profrep is to calculate individual profile repeatability of replicate stress response curves (Reed et al., 2019).</p>
+<p>The goal of profrep is to calculate individual profile repeatability (Reed et al., 2019).</p>
 <p>One of the most common measurements that stress physiologists take is blood samples for corticosterone quantification during a stress response. This typically includes a sample at baseline (&lt;3 minutes of stressor onset), one or more stress-induced samples (e.g. 30 minutes after stressor onset), and potentially a negative feedback sample (e.g. 120 minutes after stressor onset and/or after dexamethasone injection). Such time series are called “stress response curves” and may be taken multiple times in one individual. If researchers have multiple stress response curves for an individual, they may want to quantify repeatability to investigate, for example, heritibility. The current standard in the field is to use linear mixed-effect models (Baugh et al. 2014; Dingemanse and Dochtermann, 2013), however this type of repeatability estimate can only be done on populations and on only one timepoint at a time. Reed et al. (2019) have proposed “Profile Repeatability,” which uses the full stress response curve (across time) to estimate repeatability for individuals.</p>
 <p>‘profrep’ is a R package for computing profile repeatability on any number of individuals, any number of timepoints, and any number of replicate stress resposne curves. A full explanation of the math behind Profile Repeatability can be found in Reed et al. (2019).</p>
 <div class="section level2">
@@ -98,27 +98,28 @@
 <span><span class="va">my_data</span> <span class="op">&lt;-</span> <span class="fu">profrep</span><span class="fu">::</span><span class="va"><a href="reference/synthetic_data_four_point.html">synthetic_data_four_point</a></span></span>
 <span><span class="va">n_trials</span> <span class="op">&lt;-</span> <span class="fl">4</span>  <span class="co"># or however many trials/rows of data per individual exist </span></span>
 <span><span class="fu">profrep</span><span class="fu">::</span><span class="fu"><a href="reference/profrep.html">profrep</a></span><span class="op">(</span>df<span class="op">=</span><span class="va">my_data</span>, n_trials<span class="op">=</span><span class="va">n_trials</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Welcome to profrep!</span></span>
-<span><span class="co">#&gt; Number of columns in input dataframe: 6</span></span>
-<span><span class="co">#&gt; Number of individuals: 11</span></span>
-<span><span class="co">#&gt; Number of replicates: 4</span></span>
-<span><span class="co">#&gt; Separating dataframe into frames for individual animals.</span></span>
-<span><span class="co">#&gt; Scoring each set of data per animal.</span></span>
-<span><span class="co">#&gt; Ordering by score.</span></span>
-<span><span class="co">#&gt; Final Rank Order (by individual name)</span></span>
-<span><span class="co">#&gt; G F E I H D J C B K A </span></span>
-<span><span class="co">#&gt; ____________</span></span></code></pre></div>
-<p>What is special about using <code>README.Rmd</code> instead of just <code>README.md</code>? You can include R chunks like so:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span></span>
-<span><span class="co">#&gt;      speed           dist       </span></span>
-<span><span class="co">#&gt;  Min.   : 4.0   Min.   :  2.00  </span></span>
-<span><span class="co">#&gt;  1st Qu.:12.0   1st Qu.: 26.00  </span></span>
-<span><span class="co">#&gt;  Median :15.0   Median : 36.00  </span></span>
-<span><span class="co">#&gt;  Mean   :15.4   Mean   : 42.98  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:19.0   3rd Qu.: 56.00  </span></span>
-<span><span class="co">#&gt;  Max.   :25.0   Max.   :120.00</span></span></code></pre></div>
-<p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date. <code>devtools::build_readme()</code> is handy for this.</p>
+<span><span class="co">#&gt;    individual n_crossings max_variance ave_variance base_score final_score rank</span></span>
+<span><span class="co">#&gt; 1           E           0         6.67         5.42      12.10      0.9925    1</span></span>
+<span><span class="co">#&gt; 2           B           0        15.00        12.92      27.95      0.9912    2</span></span>
+<span><span class="co">#&gt; 3           D           0        26.67        26.40      53.12      0.9887    3</span></span>
+<span><span class="co">#&gt; 4           F           0        58.92        56.59     115.62      0.9790    4</span></span>
+<span><span class="co">#&gt; 5           G           0        91.67        87.42     179.27      0.9611    5</span></span>
+<span><span class="co">#&gt; 6           I           0       106.67       106.67     213.55      0.9461    6</span></span>
+<span><span class="co">#&gt; 7           J           5       106.67       106.67     277.33      0.9026    7</span></span>
+<span><span class="co">#&gt; 8           C           0       207.58        86.81     294.81      0.8861    8</span></span>
+<span><span class="co">#&gt; 9           K          15       106.67       106.67     384.00      0.7613    9</span></span>
+<span><span class="co">#&gt; 10          H           0       375.00       149.42     525.17      0.4374   10</span></span>
+<span><span class="co">#&gt; 11          A           0       456.25       181.88     639.04      0.1993   11</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+</h2>
+<p><a href="https://opensource.org/license/mit/" class="external-link">MIT License</a></p>
+<div class="section level3">
+<h3 id="citing-this-work">Citing This Work<a class="anchor" aria-label="anchor" href="#citing-this-work"></a>
+</h3>
+<p>If you use <code>profrep</code> in your own published work, we ask that you include a reference both to the original paper describing the method (Reed et al., 2019) and the paper introducing this package (Beattie et al., in prep.)</p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="citations">Citations<a class="anchor" aria-label="anchor" href="#citations"></a>
@@ -126,14 +127,10 @@
 <ol style="list-style-type: decimal">
 <li>Baugh AT, Oers K van, Dingemanse NJ, Hau M. Baseline and stress-induced glucocorticoid concentrations are not repeatable but covary within individual great tits (Parus major). Gen Comp Endocrinol [Internet]. 2014;208:154–63. Available from: <a href="http://dx.doi.org/10.1016/j.ygcen.2014.08.014" class="external-link uri">http://dx.doi.org/10.1016/j.ygcen.2014.08.014</a>
 </li>
+<li>Beattie, U.K., Harris, D.R., Reed, J.M., Weaver, Z.R., Romero, L.M. in preparation</li>
 <li>Dingemanse NJ, Dochtermann NA. Quantifying individual variation in behaviour: Mixed-effect modelling approaches. J Anim Ecol. 2013;82:39–54.</li>
 <li>Reed JM, Harris DR, Romero LM. Profile repeatability: A new method for evaluating repeatability of individual hormone response profiles. Gen Comp Endocrinol. 2019;270:1–9.</li>
 </ol>
-</div>
-<div class="section level2">
-<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
-</h2>
-<p><a href="https://opensource.org/license/mit/" class="external-link">MIT License</a></p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
