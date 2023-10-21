@@ -24,13 +24,19 @@ score_individual_df(
 \item{variance_set}{A vector of variance values.}
 }
 \value{
-A score calculated for the individual data frame.
+A list calculated for the individual data frame. Contains two values:
+\enumerate{
+\item n_crossings: The number of crossover events in the data.
+\item base_score: The un-normalized profile repeatability score for the data.
+}
 }
 \description{
-This function calculates a score for an individual data frame based on various factors,
-including the number of crossovers, maximum variance, and a set of variances.
+Score an Individual Data Frame
 }
 \details{
+This function calculates a score for an individual data frame based on various factors,
+including the number of crossovers, maximum variance, and a set of variances.
+
 The score is computed as follows:
 \itemize{
 \item It factors in the number of crossovers using a scaling factor.
@@ -38,6 +44,25 @@ The score is computed as follows:
 \item It adds a component based on the average of variance values.
 \item It includes a scaled component of the number of crossovers.
 }
+}
+\examples{
+arr <- data.frame(
+  individual=c("a", "a"),
+  time=c(5, 15),
+  col_a=c(1, 2),
+  col_b=c(2, 3)
+)
+variance_set <- c(0.5, 0.5)
+max_variance <- 0.5
+score_list <- score_individual_df(
+  individual_df=arr,
+  n_trials=2,
+  n_replicates=2,
+  max_variance=max_variance,
+  variance_set=variance_set
+)
+print(score_list)
+
 }
 \seealso{
 \code{\link{calculate_crossovers}} for information on crossovers calculation.

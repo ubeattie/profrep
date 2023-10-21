@@ -8,5 +8,5 @@ test_that("calculating crossovers works", {
       nrow = 3,
       byrow=TRUE
    )
-  expect_equal(calculate_crossovers(observed_data, 3, 5), 20)
+  expect_equal(calculate_crossovers(observed_data, 3, 5), 14)
 })

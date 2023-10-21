@@ -30,3 +30,29 @@ First, we will install the package from CRAN:
 library(profrep)
 ```
 
+Next, we will load in a data set from a csv. This would take the form of `data <- read.csv(<path_to_csv>)`. Instead of loading in new data, this vignette will make use of one of the three example data sets provided with `profrep`. We shall use the synthetic data created for this purpose, which consists of 11 individuals, which had four replicates sampled at 4 different times.
+
+To load in, we call the data from the `profrep` package:
+
+```{r}
+synthetic_data <- profrep::synthetic_data_four_point
+print(synthetic_data)
+```
+
+Here, we see that there are no missing replicates for any individual at any time. What clean data!
+
+Since we know how many trials we performed, we can easily perform the profile repeatability calculation with 
+
+```{r}
+pr_score_df <- profrep::profrep(df=synthetic_data, n_trials=4)
+```
+
+If we wanted logs to be displayed in the terminal, we would have changed the default verbosity factor from `FALSE` to `TRUE` with `verbose = True`.
+
+The results of the calculation are below:
+
+```{r}
+print(pr_score_df)
+```
+
+We see that the individual `E` is the highest-ranking individual, with a profile-repeatability score of 0.9925!

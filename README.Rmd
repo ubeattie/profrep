@@ -64,20 +64,18 @@ n_trials <- 4  # or however many trials/rows of data per individual exist
 profrep::profrep(df=my_data, n_trials=n_trials)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+## License
 
-```{r cars}
-summary(cars)
-```
+[MIT License](https://opensource.org/license/mit/)
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+### Citing This Work
+
+If you use `profrep` in your own published work, we ask that you include a reference both to the original paper describing the method (Reed et al., 2019) and the paper introducing this package (Beattie et al., in prep.)
 
 ## Citations
 
 1. Baugh AT, Oers K van, Dingemanse NJ, Hau M. Baseline and stress-induced glucocorticoid concentrations are not repeatable but covary within individual great tits (Parus major). Gen Comp Endocrinol [Internet]. 2014;208:154–63. Available from: http://dx.doi.org/10.1016/j.ygcen.2014.08.014
-2. Dingemanse NJ, Dochtermann NA. Quantifying individual variation in behaviour: Mixed-effect modelling approaches. J Anim Ecol. 2013;82:39–54. 
-3. Reed JM, Harris DR, Romero LM. Profile repeatability: A new method for evaluating repeatability of individual hormone response profiles. Gen Comp Endocrinol. 2019;270:1–9. 
+2. Beattie, U.K., Harris, D.R., Reed, J.M., Weaver, Z.R., Romero, L.M. in preparation
+3. Dingemanse NJ, Dochtermann NA. Quantifying individual variation in behaviour: Mixed-effect modelling approaches. J Anim Ecol. 2013;82:39–54. 
+4. Reed JM, Harris DR, Romero LM. Profile repeatability: A new method for evaluating repeatability of individual hormone response profiles. Gen Comp Endocrinol. 2019;270:1–9. 
 
-## License
-
-[MIT License](https://opensource.org/license/mit/)

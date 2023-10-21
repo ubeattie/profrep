@@ -1,3 +1,4 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # profrep
@@ -8,7 +9,7 @@
 [![pkgdown](https://github.com/ubeattie/profrep/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/ubeattie/profrep/actions/workflows/pkgdown.yaml)
 <!-- badges: end -->
 
-The goal of profrep is to calculate individual profile repeatability of replicate stress response curves
+The goal of profrep is to calculate individual profile repeatability
 (Reed et al., 2019).
 
 One of the most common measurements that stress physiologists take is
@@ -71,34 +72,30 @@ library(profrep)
 my_data <- profrep::synthetic_data_four_point
 n_trials <- 4  # or however many trials/rows of data per individual exist 
 profrep::profrep(df=my_data, n_trials=n_trials)
-#> Welcome to profrep!
-#> Number of columns in input dataframe: 6
-#> Number of individuals: 11
-#> Number of replicates: 4
-#> Separating dataframe into frames for individual animals.
-#> Scoring each set of data per animal.
-#> Ordering by score.
-#> Final Rank Order (by individual name)
-#> G F E I H D J C B K A 
-#> ____________
+#>    individual n_crossings max_variance ave_variance base_score final_score rank
+#> 1           E           0         6.67         5.42      12.10      0.9925    1
+#> 2           B           0        15.00        12.92      27.95      0.9912    2
+#> 3           D           0        26.67        26.40      53.12      0.9887    3
+#> 4           F           0        58.92        56.59     115.62      0.9790    4
+#> 5           G           0        91.67        87.42     179.27      0.9611    5
+#> 6           I           0       106.67       106.67     213.55      0.9461    6
+#> 7           J           5       106.67       106.67     277.33      0.9026    7
+#> 8           C           0       207.58        86.81     294.81      0.8861    8
+#> 9           K          15       106.67       106.67     384.00      0.7613    9
+#> 10          H           0       375.00       149.42     525.17      0.4374   10
+#> 11          A           0       456.25       181.88     639.04      0.1993   11
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+## License
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
+[MIT License](https://opensource.org/license/mit/)
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+### Citing This Work
+
+If you use `profrep` in your own published work, we ask that you include
+a reference both to the original paper describing the method (Reed et
+al., 2019) and the paper introducing this package (Beattie et al., in
+prep.)
 
 ## Citations
 
@@ -107,13 +104,11 @@ up-to-date. `devtools::build_readme()` is handy for this.
     covary within individual great tits (Parus major). Gen Comp
     Endocrinol \[Internet\]. 2014;208:154–63. Available from:
     <http://dx.doi.org/10.1016/j.ygcen.2014.08.014>
-2.  Dingemanse NJ, Dochtermann NA. Quantifying individual variation in
+2.  Beattie, U.K., Harris, D.R., Reed, J.M., Weaver, Z.R., Romero, L.M.
+    in preparation
+3.  Dingemanse NJ, Dochtermann NA. Quantifying individual variation in
     behaviour: Mixed-effect modelling approaches. J Anim Ecol.
     2013;82:39–54.
-3.  Reed JM, Harris DR, Romero LM. Profile repeatability: A new method
+4.  Reed JM, Harris DR, Romero LM. Profile repeatability: A new method
     for evaluating repeatability of individual hormone response
     profiles. Gen Comp Endocrinol. 2019;270:1–9.
-
-## License
-
-[MIT License](https://opensource.org/license/mit/)

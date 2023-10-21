@@ -2,7 +2,7 @@
 % Please edit documentation in R/calculate_crossovers.R
 \name{calculate_crossovers}
 \alias{calculate_crossovers}
-\title{Calculate the Number of Crossovers in a Dataset}
+\title{Calculate the Number of Crossovers}
 \usage{
 calculate_crossovers(individual_df, n_trials, n_replicates)
 }
@@ -17,12 +17,14 @@ calculate_crossovers(individual_df, n_trials, n_replicates)
 The number of crossovers detected in the dataset.
 }
 \description{
+Calculate the Number of Crossovers
+}
+\details{
 This function calculates the number of crossovers in a dataset by comparing
 the values of replicates across multiple trials. It assumes that missing
 values (NAs) have been interpolated using the \code{clean_data} function.
 }
 \examples{
-# Example usage:
 data <- matrix(
    c(
      1, 60, 1, 2, 3, 4, 5,   # No NA values

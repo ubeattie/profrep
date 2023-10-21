@@ -1,7 +1,8 @@
-#' Find the next good data point in a list of data.
+#' @title What Is the Next Non-Null Data Point?
 #'
+#' @details
 #' Given a data row, an index, and the number of replicates (the number of elements in the row),
-#'  this function finds the next good data point in the row.
+#'this function finds the next good data point in the row.
 #'
 #' A good data point is a non-missing value (not NA) with a non-empty string.
 #'
@@ -21,7 +22,7 @@
 find_next_good_datapoint <- function(data_row, index, n_replicates) {
   interp_val <- -999
   proceed <- TRUE
-  
+
   if ((index + 1) < n_replicates) {
     for (k in (index+1):n_replicates) {
       if (proceed) {
@@ -35,7 +36,7 @@ find_next_good_datapoint <- function(data_row, index, n_replicates) {
   }
   
   if (interp_val == -999) {
-    interp_val <- data_row[index + 1]
+    interp_val <- data_row[index - 1]
   }
   return(interp_val)
 }

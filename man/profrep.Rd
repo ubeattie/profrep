@@ -2,20 +2,61 @@
 % Please edit documentation in R/profrep.R
 \name{profrep}
 \alias{profrep}
-\title{Perform profile repeatability on a data-frame}
+\title{Perform Profile Repeatability}
 \usage{
-profrep(df, n_trials)
+profrep(df, n_trials, verbose = FALSE)
 }
 \arguments{
-\item{df}{The data frame Column 1 is the animal, column 2 is the time, the rest are the data}
+\item{df}{The input data frame, of minimum shape 2x3. This can be read in
+from a csv or another data frame stored in memory. It is assumed
+that the data frame is of the following structure:
+Column 1 is the unique identifier of an individual animal or sample
+Column 2 is the time of the sample
+Column 3-N are the columns of replicate data.}
 
-\item{n_trials}{The number of rows an individual animal will have.}
+\item{n_trials}{The number of rows an individual sample will have. For example,
+if the replicates were collected for individual 1 at times 15
+and 30, for replicates A and B, the data frame would look like:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{            | id | time | A | B |
+            |:--:|:----:|:-:|:-:|
+            | 1  | 15 | 1 | 2 |
+            | 1  | 30 | 3 | 4 |
+}\if{html}{\out{</div>}}}
+
+\item{verbose}{A boolean parameter the defaults to FALSE. Determines whether messages are printed.}
 }
 \value{
-Does not return any object, but prints out the summary of the
-profile repeatability measure for the data. TODO: Change this to return
-a dataframe.
+Returns a data frame of the results, in the following form:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{     - Column 1: "individual" - the unique identifier of an individual or sample
+     - Column 2: "n_crossings" - the calculated number of crossings.
+     - Column 3: "max_variance" - the maximum of the variances of the replicate measurements at a single time for the individual or sample.
+     - Column 4: "ave_variance" - the average of the variances of the replicate measurements at a single time for the individual or sample.
+     - Column 5: "base_score" - the original, unnormalized profile repeatability score. Smaller numbers rank higher.
+     - Column 6: "final_score" - the base score, normalized by the sigmoid function. Constrained to be between 0 and 1. Scores closer to 1 rank higher.
+     - Column 7: "rank" - the calculated ranking of the individual or sample, against all other individuals or samples in the data set.
+}\if{html}{\out{</div>}}
 }
 \description{
-Perform profile repeatability on a data-frame
+Perform Profile Repeatability
+}
+\details{
+Calculates the profile repeatability measure of the input data according to
+the method in Reed et al. (2019).
+}
+\examples{
+test_data <- profrep::example_two_point_data
+results <- profrep::profrep(df=test_data, n_trials=2)
+print(results)
+
+}
+\seealso{
+\code{\link{do_ordering}} for the main data processing function.
+
+\code{\link{calculate_crossovers}} for how the number of crossings are calculated.
+
+\code{\link{score_individual_df}} for how the score is calculated for an individual or sample.
+
+\code{\link{clean_data}} for how missing replicate values are handled.
 }

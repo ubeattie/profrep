@@ -17,11 +17,16 @@ clean_data(data, n_trials, n_replicates)
 A cleaned data frame with missing values interpolated.
 }
 \description{
+Clean Data by Interpolating Missing Values
+}
+\details{
 This function cleans a dataset by interpolating missing values in the replicate
-columns of each row using neighboring values.
+columns of each row using neighboring values. If the data frame ends in null values
+(the last columns are nulls), it will extrapolate from the last value. If the
+first value is null, it will loop around and pull from the last replicate to
+perform the interpolation between the last replicate and the second replicate.
 }
 \examples{
-# Example usage:
 my_data <- matrix(
    c(
      1, 60, 1, 2, 3, 4, 5,   # No NA values
@@ -32,6 +37,8 @@ my_data <- matrix(
     byrow=TRUE
  )
 cleaned_data <- clean_data(my_data, n_trials = 3, n_replicates = 5)
+print(my_data)
+print(cleaned_data)
 
 }
 \seealso{

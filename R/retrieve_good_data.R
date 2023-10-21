@@ -27,9 +27,9 @@
 #' @export
 retrieve_good_data <- function(individual_array, t, n_replicates) {
   use_set <- which(!is.na(individual_array[t, (3:(2+n_replicates))]))
-  
+
   if (length(use_set) == 0) {return(NULL)}
-  
+
   return(use_set)
 }
 

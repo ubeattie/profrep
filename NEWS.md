@@ -1,5 +1,5 @@
 # profrep (development version)
 
-# profrep 0.0.1
+# profrep 1.0.0
 
 * Initial CRAN submission.

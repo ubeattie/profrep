@@ -33,6 +33,7 @@ reference:
   - get_vars
   - retrieve_good_data
   - score_individual_df
+  - score_dfs
   - sigmoid
 - title: Example Datasets
   desc: >
