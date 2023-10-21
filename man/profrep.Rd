@@ -53,7 +53,7 @@ results <- profrep::profrep(df=test_data, n_trials=2)
 \seealso{
 \code{\link{do_ordering}} for the main data processing function.
 
-\code{\link{calculate_crossings}} for how the number of crossings are calculated.
+\code{\link{calculate_crossovers}} for how the number of crossings are calculated.
 
 \code{\link{score_individual_df}} for how the score is calculated for an individual or sample.
 

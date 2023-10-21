@@ -23,13 +23,3 @@ Splits the data into the data frame for a particular individual from
 the id_list, then calculates metrics to compute the profile repeatability
 score. Returns a data frame with the individuals name and the score.
 }
-\examples{
-id_list <- c('A', 'B', 'C')
-df_list <- c(
-  matrix(c(1, 60, 1, 2, 3, 4, 5, 1, 90, 9, NA, 4, NA, 2, 1, 120, 3, 6, NA, NA, 9), nrow = 3, byrow=TRUE),
-  matrix(c(1, 60, 5, 6, 7, 8, 9, 1, 90, 9, NA, 4, NA, 2, 1, 120, 3, 6, NA, NA, 9), nrow = 3, byrow=TRUE),
-  matrix(c(1, 60, 11, 12, 13, 14, 15, 1, 90, 9, NA, 4, NA, 2, 1, 120, 3, 6, NA, NA, 9), nrow = 3, byrow=TRUE)
-  )
-ret_df <- score_dfs(id_list, df_list, n_replicates=5, n_trials=3)
-
-}

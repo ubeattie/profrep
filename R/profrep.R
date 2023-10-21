@@ -33,7 +33,7 @@
 #'          - Column 7: "rank" - the calculated ranking of the individual or sample, against all other individuals or samples in the data set.
 #' 
 #' @seealso \code{\link{do_ordering}} for the main data processing function.
-#' @seealso \code{\link{calculate_crossings}} for how the number of crossings are calculated.
+#' @seealso \code{\link{calculate_crossovers}} for how the number of crossings are calculated.
 #' @seealso \code{\link{score_individual_df}} for how the score is calculated for an individual or sample.
 #' @seealso \code{\link{clean_data}} for how missing replicate values are handled.
 #' 
