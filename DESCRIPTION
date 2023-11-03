@@ -4,7 +4,8 @@ Version: 0.0.1.9000
 Authors@R: c(
   person("Ursula K.", "Beattie",
          email="ubeattie@tufts.edu", 
-         role=c("cre", "aut", "cph")
+         role=c("cre", "aut", "cph"),
+         comment=c(ORCID="0000-0002-7131-3712")
         ),
   person("David", "Harris",
          email="drharris115@gmail.com",
@@ -12,11 +13,13 @@ Authors@R: c(
         ),
   person("L. Michael", "Romero",
          email="michael.romero@tufts.edu",
-         role=c("aut", "cph")
+         role=c("aut", "cph"),
+         comment=c(ORCID="0000-0002-8854-8884")
         ),
   person("J. Michael", "Reed",
          email="michael.reed@tufts.edu",
-         role=c("aut", "cph")
+         role=c("aut", "cph"),
+         comment=c(ORCID="0000-0002-3571-2652")
         ),
   person("Zachary R.", "Weaver",
          email="zrweaver447@gmail.com",
@@ -29,7 +32,7 @@ Description: Calculates profile repeatability for replicate stress response
   repeatability metric that uses the variances at each timepoint, the maximum 
   variance, the number of crossings (lines that cross over each other), and 
   the number of replicates to compute the repeatability score. 
-  For more information see Reed et al., 2019, Gen. Comp. Endocrinol (270). 
+  For more information see Reed et al., 2019, Gen. Comp. Endocrinol (270). https://doi.org/10.1016/j.ygcen.2018.09.015 
 Depends: 
     R (>= 2.10)
 License: MIT + file LICENSE
