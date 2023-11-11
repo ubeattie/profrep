@@ -20,7 +20,8 @@
 #'                 | 1  | 15 | 1 | 2 |
 #'                 | 1  | 30 | 3 | 4 |
 #'                 
-#' @param verbose A boolean parameter the defaults to FALSE. Determines whether messages are printed.
+#' @param verbose A boolean parameter that defaults to FALSE. Determines whether messages are printed.
+#' @param sort A boolean parameter that defaults to TRUE. If TRUE, sorts the returned data frame by score. If FALSE, returns the data in the individual order it was provided in
 #' 
 #' @returns Returns a data frame of the results, in the following form:
 #' 
@@ -43,7 +44,7 @@
 #' print(results)
 #' 
 #' @export
-profrep <- function(df, n_trials, verbose=FALSE) {
+profrep <- function(df, n_trials, verbose=FALSE, sort=TRUE) {
   if (verbose) {message("Welcome to profrep!")}
   n_cols <- ncol(df)  # Number of columns in whole data frame
   if (verbose) {message("Number of columns in input dataframe: ", n_cols)}
@@ -69,7 +70,8 @@ profrep <- function(df, n_trials, verbose=FALSE) {
     id_list=ids, 
     df_list=individuals, 
     n_replicates=n_replicates,
-    verbose=verbose
+    verbose=verbose,
+    sort=sort
   )
   return(ordered_df)
   if (verbose) {message("profrep calculation complete!")}

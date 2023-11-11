@@ -16,14 +16,14 @@ A dataframe with 36 rows and 12 columns:
 }
 }
 \source{
-An experiment run at Tufts University by Ursula K. Beattie
+This data was extracted from Rich & Romero 2001 (J. Comp. Physiol. Part B Biochem. Syst. Environ. Physiol. 171, 543-647. https://doi.org/10.1007/s003600100204)
 }
 \usage{
 sparrow_repeatability_three_point
 }
 \description{
 An example of data that one would perform profile repeatability on.
-Consists of 12 individual animals, with data taken at 3 times (n_trials = 3).
+Consists of 12 individual animals, with corticosterone data taken at 3 times (n_trials = 3), baseline (time = 0) and two stress-induced (time = 15 and 30).
 Then, there are 10 replicate columns. This example also shows what happens
 when there are null data records for some individuals.
 }

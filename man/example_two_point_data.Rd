@@ -16,14 +16,14 @@ A dataframe with 10 rows and 30 columns:
 }
 }
 \source{
-An experiment run at Tufts University by Ursula K. Beattie
+This data was extracted from Romero & Rich 2007 (Comp Biochem. Physiol. Part A Mol. Integr. Physiol. 147, 562-568. https://doi.org/10.1016/j.cbpa.2007.02.004)
 }
 \usage{
 example_two_point_data
 }
 \description{
 An example of data that one would perform profile repeatability on.
-Consists of 9 individual animals, with data taken at 2 times (n_trials = 2).
+Consists of 9 individual animals, with corticosterone data taken at 2 timepoints (n_trials = 2), baseline (time = 3) and stress-induced (time = 30).
 Then, there are 28 replicate columns.
 }
 \keyword{datasets}

@@ -19,15 +19,15 @@ A dataframe with 44 rows and 6 columns:
 }
 }
 \source{
-Data created for testing purposes by
+Data created for testing purposes by Reed et al., 2019 (Gen. Comp. Endocrinol. 270, 1-9. https://doi.org/10.1016/j.ygcen.2018.09.015)
 }
 \usage{
 synthetic_data_four_point
 }
 \description{
 An example of data that one would perform profile repeatability on.
-The data is synthetic data created for testing purposes.
-Consists of 11 individual animals, with data taken at 4 times (n_trials = 4).
+The data is synthetic data created for testing purposes and is designed to span a range of perceived repeatability scores.
+Consists of 11 individual animals, with data taken at 4 times (n_trials = 4), baseline (time = 0) and three stress-induced (time = 15, 30, and 45).
 Then, there are four replicate columns. Replicate column names refer to
 sample tests performed on the animal.
 }

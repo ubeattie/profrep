@@ -4,7 +4,14 @@
 \alias{do_ordering}
 \title{Score and Order Data}
 \usage{
-do_ordering(n_trials, id_list, df_list, n_replicates, verbose = FALSE)
+do_ordering(
+  n_trials,
+  id_list,
+  df_list,
+  n_replicates,
+  verbose = FALSE,
+  sort = TRUE
+)
 }
 \arguments{
 \item{n_trials}{The number of rows an individual sample will have.}
@@ -16,6 +23,8 @@ do_ordering(n_trials, id_list, df_list, n_replicates, verbose = FALSE)
 \item{n_replicates}{The number of replicates in the study.}
 
 \item{verbose}{A boolean parameter the defaults to FALSE. Determines whether messages are printed.}
+
+\item{sort}{A boolean parameter that defaults to TRUE. If TRUE, sorts the returned data frame by score. If FALSE, returns the data in the individual order it was provided in}
 }
 \value{
 Returns a data frame of the results, in the following form:
