@@ -28,6 +28,9 @@
 #' cleaned_data <- clean_data(my_data, n_trials = 3, n_replicates = 5)
 #' print(my_data)
 #' print(cleaned_data)
+#' 
+#' @importFrom stats na.omit
+#' @importFrom utils tail
 #'
 #' @export
 clean_data <- function(data, n_trials, n_replicates) {
@@ -44,7 +47,7 @@ clean_data <- function(data, n_trials, n_replicates) {
         
         interp_val <- find_next_good_datapoint(trial_row, i_rep, n_replicates)
         # If the first value is null, need to pull the last replicate value.
-        if (i_rep == 1) {first_val = trial_row[n_replicates]}
+        if (i_rep == 1) {first_val = utils::tail(stats::na.omit(unlist(trial_row[1,])), 1)}
         else {first_val = trial_row[i_rep - 1]}
         
         replacement_val <- first_val + interp_val / 2 

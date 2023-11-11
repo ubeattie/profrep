@@ -4,7 +4,7 @@
 \alias{profrep}
 \title{Perform Profile Repeatability}
 \usage{
-profrep(df, n_trials, verbose = FALSE)
+profrep(df, n_trials, verbose = FALSE, sort = TRUE)
 }
 \arguments{
 \item{df}{The input data frame, of minimum shape 2x3. This can be read in
@@ -24,7 +24,9 @@ and 30, for replicates A and B, the data frame would look like:
             | 1  | 30 | 3 | 4 |
 }\if{html}{\out{</div>}}}
 
-\item{verbose}{A boolean parameter the defaults to FALSE. Determines whether messages are printed.}
+\item{verbose}{A boolean parameter that defaults to FALSE. Determines whether messages are printed.}
+
+\item{sort}{A boolean parameter that defaults to TRUE. If TRUE, sorts the returned data frame by score. If FALSE, returns the data in the individual order it was provided in}
 }
 \value{
 Returns a data frame of the results, in the following form:

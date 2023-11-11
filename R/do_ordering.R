@@ -16,6 +16,7 @@
 #' @param df_list The list of data frames per unique individual
 #' @param n_replicates The number of replicates in the study.
 #' @param verbose A boolean parameter the defaults to FALSE. Determines whether messages are printed.
+#' @param sort A boolean parameter that defaults to TRUE. If TRUE, sorts the returned data frame by score. If FALSE, returns the data in the individual order it was provided in
 #' 
 #' @returns Returns a data frame of the results, in the following form:
 #' 
@@ -43,7 +44,7 @@
 #' print(ret_df)
 #' 
 #' @export
-do_ordering <- function(n_trials, id_list, df_list, n_replicates, verbose=FALSE) {
+do_ordering <- function(n_trials, id_list, df_list, n_replicates, verbose=FALSE, sort=TRUE) {
   # Generate Scores
   if (verbose) {message("Scoring each set of data per individual.")}
   scores_df <- score_dfs(
@@ -55,8 +56,11 @@ do_ordering <- function(n_trials, id_list, df_list, n_replicates, verbose=FALSE)
   )
 
   # Order Scores and Individuals
-  if (verbose) {message("Ordering by score.")}
-  ordered_df <- scores_df[order(scores_df$final_score, decreasing=TRUE), ]
+  if (sort) {
+    if (verbose) {message("Ordering by score.")}
+    ordered_df <- scores_df[order(scores_df$final_score, decreasing=TRUE), ]
+  }
+  else {ordered_df <- scores_df}
   
   # need the minus to rank the highest score the highest
   # average will make ties be the same decimal value
