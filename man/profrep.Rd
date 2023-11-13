@@ -4,7 +4,7 @@
 \alias{profrep}
 \title{Perform Profile Repeatability}
 \usage{
-profrep(df, n_trials, verbose = FALSE, sort = TRUE)
+profrep(df, n_timepoints, sort = TRUE, verbose = FALSE)
 }
 \arguments{
 \item{df}{The input data frame, of minimum shape 2x3. This can be read in
@@ -14,7 +14,7 @@ Column 1 is the unique identifier of an individual animal or sample
 Column 2 is the time of the sample
 Column 3-N are the columns of replicate data.}
 
-\item{n_trials}{The number of rows an individual sample will have. For example,
+\item{n_timepoints}{The number of rows an individual sample will have. For example,
 if the replicates were collected for individual 1 at times 15
 and 30, for replicates A and B, the data frame would look like:
 
@@ -24,9 +24,9 @@ and 30, for replicates A and B, the data frame would look like:
             | 1  | 30 | 3 | 4 |
 }\if{html}{\out{</div>}}}
 
-\item{verbose}{A boolean parameter that defaults to FALSE. Determines whether messages are printed.}
-
 \item{sort}{A boolean parameter that defaults to TRUE. If TRUE, sorts the returned data frame by score. If FALSE, returns the data in the individual order it was provided in}
+
+\item{verbose}{A boolean parameter that defaults to FALSE. Determines whether messages are printed.}
 }
 \value{
 Returns a data frame of the results, in the following form:
@@ -49,7 +49,7 @@ the method in Reed et al. (2019).
 }
 \examples{
 test_data <- profrep::example_two_point_data
-results <- profrep::profrep(df=test_data, n_trials=2)
+results <- profrep::profrep(df=test_data, n_timepoints=2)
 print(results)
 
 }
