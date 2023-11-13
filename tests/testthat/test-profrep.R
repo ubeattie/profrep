@@ -8,7 +8,7 @@ test_that("profrep calculates correctly for given data examples", {
     final_score = c(0.9581, 0.9356, 0.7876, 0.6719, 0.4809),
     rank = c(1, 2, 3, 4, 5)
   )
-  observed_two_point <- profrep::profrep(df=profrep::example_two_point_data, n_trials=2)
+  observed_two_point <- profrep::profrep(df=profrep::example_two_point_data, n_timepoints=2)
   expect_equal(observed_two_point, expected_two_point)
   
   expected_three_point <- data.frame(
@@ -20,6 +20,6 @@ test_that("profrep calculates correctly for given data examples", {
     final_score = c(0.9548, 0.8901, 0.8651, 0.8601, 0.8512, 0.8388, 0.7132, 0.6268, 0.5004, 0.3390, 0.0505, 0.0099),
     rank = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
   )
-  observed_three_point <- profrep::profrep(df=profrep::sparrow_repeatability_three_point, n_trials=3)
+  observed_three_point <- profrep::profrep(df=profrep::sparrow_repeatability_three_point, n_timepoints=3)
   expect_equal(observed_three_point, expected_three_point)
 })

@@ -11,7 +11,7 @@
 #'           Column 1 is the unique identifier of an individual animal or sample 
 #'           Column 2 is the time of the sample
 #'           Column 3-N are the columns of replicate data.
-#' @param n_trials The number of rows an individual sample will have. For example,
+#' @param n_timepoints The number of rows an individual sample will have. For example,
 #'                 if the replicates were collected for individual 1 at times 15
 #'                 and 30, for replicates A and B, the data frame would look like:
 #'                 
@@ -19,9 +19,9 @@
 #'                 |:--:|:----:|:-:|:-:|
 #'                 | 1  | 15 | 1 | 2 |
 #'                 | 1  | 30 | 3 | 4 |
-#'                 
-#' @param verbose A boolean parameter that defaults to FALSE. Determines whether messages are printed.
+#'
 #' @param sort A boolean parameter that defaults to TRUE. If TRUE, sorts the returned data frame by score. If FALSE, returns the data in the individual order it was provided in
+#' @param verbose A boolean parameter that defaults to FALSE. Determines whether messages are printed.
 #' 
 #' @returns Returns a data frame of the results, in the following form:
 #' 
@@ -40,16 +40,16 @@
 #' 
 #' @examples
 #' test_data <- profrep::example_two_point_data
-#' results <- profrep::profrep(df=test_data, n_trials=2)
+#' results <- profrep::profrep(df=test_data, n_timepoints=2)
 #' print(results)
 #' 
 #' @export
-profrep <- function(df, n_trials, verbose=FALSE, sort=TRUE) {
+profrep <- function(df, n_timepoints, sort=TRUE, verbose=FALSE) {
   if (verbose) {message("Welcome to profrep!")}
   n_cols <- ncol(df)  # Number of columns in whole data frame
   if (verbose) {message("Number of columns in input dataframe: ", n_cols)}
 
-  n_individuals = nrow(df) / n_trials  # Number of individuals
+  n_individuals = nrow(df) / n_timepoints  # Number of individuals
   if (verbose) {message("Number of individuals: ", n_individuals)}
   
   n_replicates <- n_cols - 2  # Number of replicates (because of how the df is defined)
@@ -66,7 +66,7 @@ profrep <- function(df, n_trials, verbose=FALSE, sort=TRUE) {
   
   # Pass the list through the do_ordering function
   ordered_df <- do_ordering(
-    n_trials=n_trials, 
+    n_trials=n_timepoints, 
     id_list=ids, 
     df_list=individuals, 
     n_replicates=n_replicates,
