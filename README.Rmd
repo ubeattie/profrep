@@ -29,7 +29,7 @@ If researchers have multiple stress response curves for an individual, they may 
 The current standard in the field is to use linear mixed-effect models (Baugh et al. 2014; Dingemanse and Dochtermann, 2013), however this type of repeatability estimate can only be done on populations and on only one timepoint at a time. 
 Reed et al. (2019) have proposed "Profile Repeatability," which uses the full stress response curve (across time) to estimate repeatability for individuals. 
 
-'profrep' is a R package for computing profile repeatability on any number of individuals, any number of timepoints, and any number of replicate stress resposne curves. A full explanation of the math behind Profile Repeatability can be found in Reed et al. (2019).
+'profrep' is a R package for computing profile repeatability on any number of individuals, any number of timepoints, and any number of replicate stress response curves. A full explanation of the math behind Profile Repeatability can be found in Reed et al. (2019).
 
 ## Installation
 
@@ -61,7 +61,7 @@ library(profrep)
 
 my_data <- profrep::synthetic_data_four_point
 n_trials <- 4  # or however many trials/rows of data per individual exist 
-profrep::profrep(df=my_data, n_trials=n_trials)
+profrep::profrep(df=my_data, n_timepoints=n_trials)
 ```
 
 ## License

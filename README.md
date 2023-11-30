@@ -31,7 +31,7 @@ to estimate repeatability for individuals.
 
 ‘profrep’ is a R package for computing profile repeatability on any
 number of individuals, any number of timepoints, and any number of
-replicate stress resposne curves. A full explanation of the math behind
+replicate stress response curves. A full explanation of the math behind
 Profile Repeatability can be found in Reed et al. (2019).
 
 ## Installation
@@ -71,7 +71,7 @@ library(profrep)
 
 my_data <- profrep::synthetic_data_four_point
 n_trials <- 4  # or however many trials/rows of data per individual exist 
-profrep::profrep(df=my_data, n_trials=n_trials)
+profrep::profrep(df=my_data, n_timepoints=n_trials)
 #>    individual n_crossings max_variance ave_variance base_score final_score rank
 #> 1           E           0         6.67         5.42      12.10      0.9925    1
 #> 2           B           0        15.00        12.92      27.95      0.9912    2
