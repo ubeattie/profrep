@@ -3,7 +3,7 @@ Title: Profile Repeatability
 Version: 0.0.1.9000
 Authors@R: c(
   person("Ursula K.", "Beattie",
-         email="ubeattie@tufts.edu", 
+         email="ursula.beattie@tufts.edu", 
          role=c("cre", "aut", "cph"),
          comment=c(ORCID="0000-0002-7131-3712")
         ),
