@@ -36,7 +36,7 @@ Description: Calculates profile repeatability for replicate stress response
 Depends: 
     R (>= 2.10)
 License: MIT + file LICENSE
-URL: https://github.com/ubeattie/profrep
+URL: https://ubeattie.github.io/profrep/
 BugReports: https://github.com/ubeattie/profrep/issues
 Encoding: UTF-8
 Roxygen: list(markdown=TRUE)
