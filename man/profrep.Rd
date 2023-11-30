@@ -7,12 +7,13 @@
 profrep(df, n_timepoints, sort = TRUE, verbose = FALSE)
 }
 \arguments{
-\item{df}{The input data frame, of minimum shape 2x3. This can be read in
+\item{df}{The input data frame, of minimum shape 3 rows by 4 columns. This can be read in
 from a csv or another data frame stored in memory. It is assumed
 that the data frame is of the following structure:
 Column 1 is the unique identifier of an individual animal or sample
 Column 2 is the time of the sample
-Column 3-N are the columns of replicate data.}
+Column 3-N are the columns of replicate data.
+Row 1 is assumed to be header strings for each column.}
 
 \item{n_timepoints}{The number of rows an individual sample will have. For example,
 if the replicates were collected for individual 1 at times 15
@@ -24,28 +25,28 @@ and 30, for replicates A and B, the data frame would look like:
             | 1  | 30 | 3 | 4 |
 }\if{html}{\out{</div>}}}
 
-\item{sort}{A boolean parameter that defaults to TRUE. If TRUE, sorts the returned data frame by score. If FALSE, returns the data in the individual order it was provided in}
+\item{sort}{A boolean parameter that defaults to TRUE. If TRUE, sorts the returned data frame by score. If FALSE, returns the data in the individual order in which it was provided.}
 
 \item{verbose}{A boolean parameter that defaults to FALSE. Determines whether messages are printed.}
 }
 \value{
 Returns a data frame of the results, in the following form:
-
-\if{html}{\out{<div class="sourceCode">}}\preformatted{     - Column 1: "individual" - the unique identifier of an individual or sample
-     - Column 2: "n_crossings" - the calculated number of crossings.
-     - Column 3: "max_variance" - the maximum of the variances of the replicate measurements at a single time for the individual or sample.
-     - Column 4: "ave_variance" - the average of the variances of the replicate measurements at a single time for the individual or sample.
-     - Column 5: "base_score" - the original, unnormalized profile repeatability score. Smaller numbers rank higher.
-     - Column 6: "final_score" - the base score, normalized by the sigmoid function. Constrained to be between 0 and 1. Scores closer to 1 rank higher.
-     - Column 7: "rank" - the calculated ranking of the individual or sample, against all other individuals or samples in the data set.
-}\if{html}{\out{</div>}}
+\itemize{
+\item Column 1: "individual" - the unique identifier of an individual or sample
+\item Column 2: "n_crossings" - the calculated number of crossings.
+\item Column 3: "max_variance" - the maximum of the variances of the replicate measurements at a single time for the individual or sample.
+\item Column 4: "ave_variance" - the average of the variances of the replicate measurements at a single time for the individual or sample.
+\item Column 5: "base_score" - the original, unnormalized profile repeatability score. Smaller numbers rank higher.
+\item Column 6: "final_score" - the base score, normalized by the sigmoid function. Constrained to be between 0 and 1. Scores closer to 1 rank higher.
+\item Column 7: "rank" - the calculated ranking of the individual or sample, against all other individuals or samples in the data set.
+}
 }
 \description{
 Perform Profile Repeatability
 }
 \details{
 Calculates the profile repeatability measure of the input data according to
-the method in Reed et al. (2019).
+the method in Reed et al., 2019, J. Gen. Comp. Endocrinol. (270).
 }
 \examples{
 test_data <- profrep::example_two_point_data
