@@ -1,6 +1,6 @@
 Package: profrep
 Title: Profile Repeatability
-Version: 1.0.0.9000
+Version: 1.0.0
 Authors@R: c(
   person("Ursula K.", "Beattie",
          email="ursula.beattie@tufts.edu", 
