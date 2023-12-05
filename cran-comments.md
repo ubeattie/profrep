@@ -10,10 +10,16 @@
  et -> Not mispelled, part of et al.
  timepoint -> not mispelled, part of a variable name
  
+## Resubmission 2023-11-30
+
 * Found the following (possibly) invalid DOIs:
  DOI: doi
    From: inst/CITATION
    Message: Invalid DOI
    
-This DOI is invalid as we do not have a DOI for the package publication yet.
-We will be submitting to the journal after the results of the CRAN process.
+We have fixed this DOI with a DOI from Zenodo
+
+## Resubmission 2023-12-01
+
+* Was asked to add a DOI for the referenced paper in the description file - that 
+ is now added
