@@ -1,11 +1,10 @@
 bibentry(
-  "Article",
-  title = "Investigating metrics of individual repeatability of the stress response",
-  author = "Beattie, U.K., Romero, L.M., and Reed, J.M.",
-  year = "2024",
-  journal = "in prep.",
-  volume = 0,
-  number = 0,
-  pages = 0,
-  doi = "doi"
+  "Unpublished",
+  title = "profrep: An R Package for Profile Repeatability",
+  author = "Beattie, U.K., Harris, D., Romero, L.M., Reed, J.M., and Weaver, Z.R.",
+  year = "2023",
+  month = "Nov",
+  journal = "Zenodo",
+  doi = "10.5281/zenodo.10236416",
+  note = "software"
 )

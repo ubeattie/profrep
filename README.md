@@ -94,8 +94,9 @@ profrep::profrep(df=my_data, n_timepoints=n_trials)
 
 If you use `profrep` in your own published work, we ask that you include
 a reference both to the original paper describing the method (Reed et
-al., 2019) and the paper introducing this package (Beattie et al., in
-prep.)
+al., 2019), the paper introducing this package (Beattie et al., in
+prep.), and the package itself [(Beattie et
+al. 2023)](https://zenodo.org/records/10236417).
 
 ## Citations
 
